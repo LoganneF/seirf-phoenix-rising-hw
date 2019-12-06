@@ -1,0 +1,244 @@
+// SECTION 1
+
+/*1. DRY stands for Don't Repeat Yourself. 
+Dry code avoids repetition and makes code more readable. 
+Loops help keep code dry. 
+
+2. const is the keyword that prevents variables from being reassigned
+var is just the keyword for variable but is outdated and avoided thanks to ES6.
+let is the keyword that allows variables to be reassigned*/
+
+//  SECTION 2
+
+const a = 4;
+const b = 53;
+const c = 57;
+const d = 16;
+const e = 'Kelvin';
+const f = false;
+
+console.log(a < b);
+console.log(c > d);
+console.log('Name' === 'Name');
+console.log(a + b === c);
+console.log(a * a === d);
+console.log(e !== 'Kevin');
+console.log(48 !== '48');
+console.log(f !== e);
+
+//Set a new variable g to 0
+g = 0;
+console.log(g);
+
+//Then set the variable g to be equal to b + c
+g = b + c;
+console.log(g);
+
+/*1. I used let because I was reassigning the variable.
+Var is outdated. Const would have thrown an error.
+2. Even without the keyword it still ran the code properly.
+3. 10 = g ran this error: SyntaxError: Invalid left-hand side in assignment*/
+
+
+// SECTION 3
+
+/* 1. This is an infinite loop because nothing
+will cause it to equal false and break the loop
+
+2. This is an infinite loop because the variable 
+can't be reassigned so it should throw an error message */
+
+let letters = "A";
+let i = 0;
+
+// start a while loop that will run as long as i is less than 10
+while (i < 20) {
+    //increments the value of variable letters by "A"
+    letters += "A";
+    //increments the value of i by 1
+    i++;
+//closes loop. Loop will keep running until condition is met
+}
+// prints the value of letters to the screen/Terminal window
+console.log(letters);
+//It should print 20 A's
+
+//  SECTION 4
+
+/* 1. For and while loops basically do the same thing but 
+in for loops you have to create a new variable. While loops 
+give you more flexibility as to when it will stop or what
+goes in it.
+
+2. The first part of the control panel is: the initializer;
+The second part of the control panel is: the while condition;
+The third part of the control panel is: the incrementer; */
+
+
+for (let i = 0; i < 999; i++) {
+    console.log(i);
+}
+
+// BONUS
+
+/* Backslashes are used to escape characters in strings */
+
+for (let i = 999; i > 0; i--) {
+    console.log(i);
+}
+
+for (let i = 1; i <= 10; i++) {
+    console.log("The current value of i is: " + i + " of 10");
+}
+
+// BONUS 
+
+for (let i = 1; i <= 10; i++) {
+    console.log(`The current value of i is: ${i} of 10`);
+}
+
+const starWars = ["Han", "C3PO", "R2D2", "Luke", "Leia", "Anakin"];
+
+for(i = 0; i < starWars.length; i++){
+    console.log(starWars[i]);
+}
+
+for(i = 0; i < starWars.length; i++){
+    console.log(starWars[i] + " " + i);
+}
+//  BONUS
+
+for(i = 0; i < starWars.length; i += 2){
+    console.log(starWars[i]);
+}
+
+
+
+
+Terminal Homework 
+
+# Copy this text into your `.bash` homework file. Copy and paste the code you successfully used into terminal below each prompt
+
+# Open the **Terminal app**
+
+# Create a new directory on your desktop called `galaxy_far_far_away`and enter it
+Logannes-MacBook-Air:~ loganne$ cd Desktop
+Logannes-MacBook-Air:Desktop loganne$ mkdir galaxy_far_far_away
+
+# Create a directory called `death_star`
+
+# and make the following files inside of it:
+# darth_vader.txt
+# princess_leia.txt
+# storm_trooper.txt
+
+Logannes-MacBook-Air:Desktop loganne$ mkdir death_star
+Logannes-MacBook-Air:Desktop loganne$ cd death_star/
+Logannes-MacBook-Air:death_star loganne$ touch darth_vader.txt
+Logannes-MacBook-Air:death_star loganne$ touch princess_leia.txt
+Logannes-MacBook-Air:death_star loganne$ touch storm_trooper.txt
+
+# In `galaxy_far_far_away`, make a directory named `tatooine`
+Logannes-MacBook-Air:death_star loganne$ cd ~
+Logannes-MacBook-Air:~ loganne$ cd Desktop
+Logannes-MacBook-Air:Desktop loganne$ cd galaxy_far_far_away/
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mkdir tatooine
+
+# and create the following files in it:
+# luke.txt
+# ben_kenobi.txt
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ cd tatooine
+Logannes-MacBook-Air:tatooine loganne$ touch luke.txt
+Logannes-MacBook-Air:tatooine loganne$ touch ben_kenobi.txt
+
+
+# Inside of `tatooine` make a directory called `millenium_falcon`
+# and in it create:
+# han_solo.txt
+# chewbaca.txt
+Logannes-MacBook-Air:tatooine loganne$ mkdir millenium_falcon
+Logannes-MacBook-Air:tatooine loganne$ cd millenium_falcon/
+Logannes-MacBook-Air:millenium_falcon loganne$ touch han_solo.txt
+Logannes-MacBook-Air:millenium_falcon loganne$ touch chewbaca.txt
+
+
+# Rename `ben_kenobi.txt` to `obi_wan.txt
+Logannes-MacBook-Air:millenium_falcon loganne$ cd ..
+Logannes-MacBook-Air:tatooine loganne$ mv ben_kenobi.txt obi_wan.txt
+
+# Copy `storm_trooper.txt` from `death_star` to `tatooine`
+Logannes-MacBook-Air:death_star loganne$ cp ~/Desktop/death_star/storm_trooper.txt ~/Desktop/galaxy_far_far_away/tatooine
+
+# Move `luke.txt` and `obi_wan.txt` to the `millenium_falcon`
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mv ~/Desktop/galaxy_far_far_away/tatooine/luke.txt ~/Desktop/galaxy_far_far_away/tatooine/millenium_falcon/
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mv ~/Desktop/galaxy_far_far_away/tatooine/obi_wan.txt ~/Desktop/galaxy_far_far_away/tatooine/millenium_falcon/
+
+# Move `millenium_falcon` out of `tatooine` and into `galaxy_far_far_away`
+Logannes-MacBook-Air:tatooine loganne$ mv ~/Desktop/galaxy_far_far_away/tatooine/millenium_falcon/ ~/Desktop/galaxy_far_far_away/
+
+# Move `millenium_falcon` into `death_star`
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mv ~/Desktop/galaxy_far_far_away/millenium_falcon/ ~/Desktop/death_star/
+
+# Move `princess_leia.txt` into the `millenium_falcon`
+Logannes-MacBook-Air:death_star loganne$ mv ~/Desktop/death_star/princess_leia.txt ~/Desktop/death_star/millenium_falcon/
+
+# Delete `obi_wan.txt`
+Logannes-MacBook-Air:millenium_falcon loganne$ rm /Users/loganne/Desktop/death_star/millenium_falcon/obi_wan.txt 
+
+# In `galaxy_far_far_away`, make a directory called `yavin_4`
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mkdir yavin_4
+
+# Move the `millenium_falcon` out of the `death_star` and into `yavin_4`
+Logannes-MacBook-Air:death_star loganne$ mv /Users/loganne/Desktop/death_star/millenium_falcon/ /Users/loganne/Desktop/galaxy_far_far_away/yavin_
+
+# Make a directory in `yavin_4` called `x_wing`
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ cd yavin_4/
+Logannes-MacBook-Air:yavin_4 loganne$ mkdir x_wing
+
+# Move `princess_leia.txt` to `yavin_4` and `luke.txt` to `x_wing`
+Logannes-MacBook-Air:millenium_falcon loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/millenium_falcon/princess_leia.txt /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/x_wing
+Logannes-MacBook-Air:millenium_falcon loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/millenium_falcon/luke.txt /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/x_wing 
+
+# Move the `millenium_falcon` and `x_wing` out of `yavin_4` and into `galaxy_far_far_away`
+Logannes-MacBook-Air:yavin_4 loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/millenium_falcon /Users/loganne/Desktop/galaxy_far_far_away 
+Logannes-MacBook-Air:yavin_4 loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/yavin_4/x_wing /Users/loganne/Desktop/galaxy_far_far_away 
+
+# In `death_star`, create directories for `tie_fighter_1`, `tie_fighter_2` and `tie_fighter_3`
+Logannes-MacBook-Air:Desktop loganne$ cd death_star/
+Logannes-MacBook-Air:death_star loganne$ mkdir tie_fighter_1
+Logannes-MacBook-Air:death_star loganne$  mkdir tie_fighter_2
+Logannes-MacBook-Air:death_star loganne$  mkdir tie_fighter_3
+
+# Move `darth_vader.txt` into `tie_fighter_1`
+Logannes-MacBook-Air:death_star loganne$ mv /Users/loganne/Desktop/death_star/darth_vader.txt /Users/loganne/Desktop/death_star/tie_fighter_1 
+
+# Make a copy of `storm_trooper.txt` in both `tie_fighter_2` and `tie_fighter_3`
+Logannes-MacBook-Air:death_star loganne$ cp /Users/loganne/Desktop/death_star/storm_trooper.txt /Users/loganne/Desktop/death_star/tie_fighter_2 
+Logannes-MacBook-Air:death_star loganne$ cp /Users/loganne/Desktop/death_star/storm_trooper.txt /Users/loganne/Desktop/death_star/tie_fighter_3 
+
+# Move all of the `tie_fighters` out of the `death_star` and into `galaxy_far_far_away`
+Logannes-MacBook-Air:death_star loganne$ mv /Users/loganne/Desktop/death_star/tie_fighter_1 /Users/loganne/Desktop/galaxy_far_far_away 
+Logannes-MacBook-Air:death_star loganne$ mv /Users/loganne/Desktop/death_star/tie_fighter_2 /Users/loganne/Desktop/galaxy_far_far_away 
+Logannes-MacBook-Air:death_star loganne$ mv /Users/loganne/Desktop/death_star/tie_fighter_3 /Users/loganne/Desktop/galaxy_far_far_away 
+
+# Be careful with this command - cannot undo!
+
+# Make sure you delete the right thing, or you could accidentally delete the contents of your computer (it has happened).
+
+# This command will typically not ask you if you really want to delete. It will just delete so doublecheck you are deleting exactly what you mean to delete
+
+# Remove `tie_fighters` 2 and 3.
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ rm -R tie_fighter_2
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ rm -R tie_fighter_3
+
+# Touch a file in "**x_wing**" called "**the_force.txt**".
+Logannes-MacBook-Air:x_wing loganne$ touch the_force.txt
+
+# Destroy the "**death_star**" and anyone inside of it.
+Logannes-MacBook-Air:Desktop loganne$ rm -R death_star/
+
+# Return "**x_wing**" and the "**millenium_falcon**" to "**yavin_4**".
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/x_wing /Users/loganne/Desktop/galaxy_far_far_away/yavin_4 
+Logannes-MacBook-Air:galaxy_far_far_away loganne$ mv /Users/loganne/Desktop/galaxy_far_far_away/millenium_falcon /Users/loganne/Desktop/galaxy_far_far_away/yavin_4 
+
+# Celebrate!
