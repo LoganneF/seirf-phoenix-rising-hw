@@ -1,21 +1,62 @@
 
+header {
+    background-color: whitesmoke;
+   text-align: center;
+}
+
 body {
     font-family: 'Oswald', sans-serif;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(239,246,249,1) 0%, rgba(206,239,253,1) 90% );
+   background-color: rgb(189, 230, 230);
 }
 
-h1, h3 {
+
+h1, h2, h3 {
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
 
-
-img {
-    width: 40%;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
+h1 {
+  font-size: 60px;
 }
 
+  li {
+    padding: 0px 10px 0px 10px;
+    color: black;
+  }
 
+  img {
+      width: 30%;
+      margin: 0 auto;
+      border-radius: 20px;
+  }
+
+  a {
+      color: black;
+  }
+
+  .nav {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 70px;
+    text-align: center;
+  }
+
+
+  .one {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+  }
+
+
+.column {
+    display: inline-block;
+    width: 32%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+  
+
+
+  /* <a href=https://www.imdb.com/videoplayer/vi2485890841> */
+ 
 
