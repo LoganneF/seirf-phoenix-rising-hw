@@ -31,8 +31,15 @@
 ////////////////////////////////
 // Wild Wild Life
 ////////////////////////////////
-
-
+/*
+plantee[2] = 5001;
+wolfy[3] = "Gotham City";
+dart.push("Hawkins");
+wolfy[0] = "Gameboy";
+console.log(wolfy);
+console.log(plantee);
+console.log(dart);
+*/
 ////////////////////////////////
 // Yell at the Ninja Turtles
 ////////////////////////////////
