@@ -14,10 +14,16 @@ Console.log logs out information in console.
 ////// Palindrome //////
 ////////////////////////
 
+const checkPalindrome = (str) => {
+    return str == str.split('').reverse().join('');
+}
+
+console.log(checkPalindrome("racecar"));
 
 ////////////////////////
 ////// Sum Array ///////
 ////////////////////////
+
 
 
 ////////////////////////
