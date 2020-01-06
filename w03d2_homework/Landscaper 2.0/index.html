@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Whack-A-Lawn</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+	
+        <header>
+            <h1>Whack-A-Lawn</h1>
+            <div class="score-box" id="score-box">
+                <h2>Wallet</h2>
+                <p class="score" id="score">0</p>
+            </div><!-- end score-box -->
+        </header>
+        <main>
+            <button class="btn-start" id="btn-start" onclick="startGame()">Start Game</button>
+            <div class="game-container">
+                <div class="row">
+                    <div class="box">
+                        <div class="hole hole1">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-01">
+                        </div>
+                    </div><!-- end box -->
+                    <div class="box">
+                        <div class="hole hole2">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-02">
+                        </div>
+                    </div><!-- end box -->
+                    <div class="box">
+                        <div class="hole hole3">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-03">
+                        </div>
+                    </div><!-- end box -->
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="box">
+                        <div class="hole hole4">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-04">
+                        </div>
+                    </div><!-- end box -->
+                    <div class="box">
+                        <div class="hole hole5">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-05">
+                        </div> 
+                    </div><!-- end box -->
+                    <div class="box">
+                        <div class="hole hole6">
+                        <img src="imgs/house.png" alt="house" class="houses" id="house-06">
+                        </div>
+                    </div><!-- end box -->
+                </div><!-- end row -->
+            </div><!-- end game-container -->
+        </main>
+        <script>
+            const holes = document.querySelectorAll('.hole');
+            const scoreBoard = document.querySelector('.score');
+            const houses = document.querySelectorAll('.houses');
+            let lastHole;
+            let timeUp = false;
+
+            function randomTime(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+
+            function randomHole(holes) {
+                const idx = Math.floor(Math.random() * holes.length);
+                const hole = holes[idx];
+                if(hole === lastHole) {
+                    console.log('...same house...try again');
+                    return randomHole(holes)
+                }
+                lastHole = hole;
+                return hole;
+            }
+
+            function peep() {
+                const time = randomTime(200, 1000);
+                const hole = randomHole(holes);
+                hole.classList.add('up');
+                setTimeout(() => {
+                    hole.classList.remove('up');
+                    if (!timeUp) peep();
+                }, time);
+            }
+            function startGame() {
+                scoreBoard.textContent = 0;
+                timeUp = false;
+                score = 0;
+                peep();
+                setTimeout(() => timeUp = true, 10000)
+            }
+
+            function bonk(e) {
+                score++;
+                this.classList.remove('up');
+                scoreBoard.textContent = score;
+            }
+
+            holes.forEach(hole => hole.addEventListener('click', bonk));
+        </script>
+    </div><!-- end wrapper -->
+
+
+</body>
+</html>

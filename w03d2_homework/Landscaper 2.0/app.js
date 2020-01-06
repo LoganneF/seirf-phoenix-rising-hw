@@ -3,6 +3,7 @@
 // =======================================
 
 const player = {
+    name: "player",
     wallet: 0, 
     tool: "your teeth", 
     isWorking: true, 
@@ -14,7 +15,6 @@ const player = {
 // =======================================
 
 const start = () => {
-    alert('Cut lawns, make money.');
     showStatus();
     askForAction();
   };
@@ -28,25 +28,55 @@ const start = () => {
   // USER ACTIONS AND INPUT
   const askForAction = () => {
     showStatus();
-    promptQuestions();
+    //need prompts here
   };
   
-  const promptQuestions = () => {
-    choice = prompt('What do you want to do?', 'landscape/buy tools');
-      if (choice.toLowerCase() === 'landscape') {
-        landscape();
-      } else if (choice.toLowerCase() === 'buy tools') {
-        checkTool();
-      } else if (choice.toLowerCase() === 'exit') {
-        //exits game - option not shown to user
-      } else if (choice.toLowerCase() === 'restart') {
-        //resets game - option not shown to user
-        start();
-      } else {
-        alert('Please try that action again!')
+// =======================================
+//          GAME PLAY OPTIONS
+// =======================================
+
+//LANDSCAPE/CUT GRASS FUNCTION
+
+const landscape = () => {
+    if (tool === 'your teeth') {
+      alert('Using ' + tool + ' will earn you $1 each day!')
+      money += 1;
+      askForAction();
+    } else if (tool === 'a pair of rusty scissors') {
+      money += 5;
+      askForAction();
+    } else if (tool === 'an old-timey push lawnmower') {
+      money += 50;
+      askForAction();
+    } else if (tool === 'a fancy battery-powered lawnmower') {
+      money += 100;
+      askForAction();
+    } else if (tool === 'a team of starving students') {
+      money += 250;
+      if (money <1000) {
         askForAction();
+      } else {
+      // Game Ends
+        alert('Congratulations!  You have made $' + money + ' with the help of your tools!  You have won the game!')
       }
+    }
   };
+
+//CHECK TOOL FUNCTION
+
+//BUY FUNCTION TOOL
+
+// =======================================
+//        CHECK WIN FUNCTION
+// =======================================
+  const checkWin = () => {
+      if(player.wallet >= 1000 && player.tool === 'team of students'){
+          alert(`${player.name} , you won the game!`)
+      } else {
+          start();
+      }
+  }
+
 // =======================================
 //          CALL START FUNCTION
 // =======================================
@@ -113,10 +143,6 @@ while(player.tool === "team of students"){
     //player.dayCount + 1 && player.wallet + 250
 }
 
-//If you have team of student && have $1000, user won!
-if(player.tool === "team of students" && player.wallet === 1000){
-    console.log("Congratulations! You won!");
-}
 */
 
 
