@@ -1,18 +1,6 @@
 @charset "UTF-8";
-/* CSS Document */
-
-/* Whack a Mole CSS */
-
-/* Mole shake animation from the shake animation 
-   that is part of Animate CSS which can be found
-   at the following URL: 
-
-   https://daneden.github.io/animate.css/
-
-*/
 
 
-/* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
 }
@@ -110,6 +98,7 @@ header .score-box {
 
 
 /* Animations */
+/* https://daneden.github.io/animate.css/ */
 
 @-webkit-keyframes shake {
   from, to {
