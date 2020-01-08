@@ -68,10 +68,13 @@
         const houses = document.querySelectorAll('.houses');
         let lastHole;
         let timeUp = false;
-        let tool;   
+        let tool = "teeth";   
         let wallet = 0; 
-        let wage = 5;
-        let choice;
+        let wage = 1;
+                
+                function startMessage() {
+                    alert("Welcome to your new landscaping business! Click on the houses as they request you and earn money! You'll start with your teeth making a $1 per lawn. Earn enough and you can buy new tools! Click the start button to begin.")
+                }
                   
                   function randomTime(min, max) {
                       return Math.round(Math.random() * (max - min) + min);
@@ -94,37 +97,82 @@
                       hole.classList.add('up');
                       setTimeout(() => {
                           hole.classList.remove('up');
-                        if(wallet === 5) {
+                        if(wallet === 5 && tool === "teeth") {
                           timeUp = true;
-                          promptQuestions();
-                      } else if(wallet === 25) {
+                          promptQuestion();
+                      } else if(wallet === 25 && tool === "scissors") {
                           timeUp = true;
-                      } else if(wallet === 250) {
+                          promptQuestion();
+                      } else if(wallet === 250 && tool === "junky lawnmower") {
                           timeUp = true;
+                          promptQuestion();
+                    } else if(wallet === 500 && tool === "fancy lawnmower") {
+                          timeUp = true;
+                          promptQuestion();
+                    } else if(wallet === 1000 && tool === "starving students"){
+                        timeUp = true;
+                        congratsWinner();
                     } else if(!timeUp) peep();
                       }, time);
                 }
-                
-                  function startLevel() {
+                function startLevel() {
                     timeUp = false;
                     peep();
                   }       
                   
+              
       // https://stackoverflow.com/questions/42989399/jquery-keeping-score-and-progressing-through-levels
                   function bonk(e) {
                       wallet += wage;
-                      //need score to increment at rate of the tool
                       this.classList.remove('up');
                       scoreBoard.textContent = wallet;
                   }
 
-                  function promptQuestions() {
+                  let choice;
+                  function promptQuestion() {
                       if(timeUp === true) {
-                        choice = prompt("You beat the level and can now buy a new tool!")
-                    }
+                        choice = prompt("You beat the level and can now buy a new tool!", "buy new tool");
+                        if(choice.toLowerCase() === 'buy new tool'){
+                            buyTool();
+                        }
+                      }
                   }
-      
+
+                  function buyTool() {
+                      if(wallet >= 5 && tool === "teeth") {
+                          wallet -= 5;
+                          wage = 5;
+                          tool = "scissors";
+                          alert('You bought ' + tool + ' and now have $' + wallet + '. You will make $' + wage + ' per lawn! Click start to begin the next level!');
+                          peep();
+                      } else if(wallet >= 25 && tool === "scissors"){
+                        wallet -= 25;
+                          wage = 50;
+                          tool = "junky lawnmower";
+                          alert('You bought ' + tool + ' and now have $' + wallet + '. You will make $' + wage + ' per lawn! Click start to begin the next level!')
+                          peep();
+                      } else if(wallet >= 250 && tool === "junky lawnmower"){
+                        wallet -= 250;
+                          wage = 100;
+                          tool = "fancy lawnmower";
+                          alert('You bought ' + tool + ' and now have $' + wallet + '. You will make $' + wage + ' per lawn! Click start to begin the next level!')
+                          peep();
+                      } else if(wallet >= 500 && tool === "fancy lawnmower"){
+                        wallet -= 500;
+                          wage = 250;
+                          tool = "starving students";
+                          alert('You bought ' + tool + ' and now have $' + wallet + '. You will make $' + wage + ' per lawn! Click start to begin the next level!')
+                          peep();
+                      } else peep(); 
+                  }
+
+                function congratsWinner() {
+                       alert("You earned $1000 and won the game!");
+                   }
+                   
+                
                   holes.forEach(hole => hole.addEventListener('click', bonk));
+                  startMessage();
         </script>
     </div>
 
