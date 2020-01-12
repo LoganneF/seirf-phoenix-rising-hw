@@ -4,7 +4,7 @@
 
 class Hamster {
     constructor(owner, name, price) {
-        this.owner = "";
+        this.owner = owner;
         this.name = name;
         this.price = 15;
     }
@@ -15,7 +15,7 @@ class Hamster {
         console.log("nibble nibble");
     }
     getPrice () {
-        console.log(this.price)
+        console.log(this.price);
     }
 }
 //===============
@@ -29,8 +29,8 @@ class Person {
         this.height = 0;
         this.weight = 0;
         this.mood = 0;
-        hamsters = [];
-        bankAccount = 0;
+        this.hamsters = [];
+        this.bankAccount = 0;
     }
     getName() {
         console.log(this.name);
@@ -49,7 +49,7 @@ class Person {
     }
     eat() {
         this.weight++;
-        this.height++;
+        this.mood++;
     }
     exercise() {
         this.weight--;
@@ -60,12 +60,43 @@ class Person {
         this.mood--;
         this.bankAccount += 10;
     }
-    buyHamser(Hamster) {
-        this.hamsters.push(Hamster);
+    buyHamster(hamster) {
+        this.hamsters.push(hamster);
         this.mood += 10;
-        this.bankAccount -= Hamster.getPrice();
+        this.bankAccount -= hamster.getPrice();
     }
 }
 
-   
-    
+//======================
+// PERSON CLASS STORY
+//======================
+const timmy = new Person('Timmy');
+for(let i = 0; i < 5; i++){
+    timmy.ageUp();
+}
+
+for(let i = 0; i < 5; i++) {
+    timmy.eat();
+}
+
+for(let i = 0; i < 5; i++){
+    timmy.exercise();
+}
+
+for(let i = 0; i < 9; i++) {
+    timmy.ageUp();
+}
+
+const gus = new Hamster("Timmy","Gus");
+
+timmy.buyHamster(gus);
+ 
+for(let i = 0; i < 15; i++) {
+    timmy.ageUp();
+}   
+
+for(let i = 0; i < 2; i++) {
+timmy.eat();
+timmy.exercise();
+}
+console.log(timmy);
