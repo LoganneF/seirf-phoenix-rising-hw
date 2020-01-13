@@ -99,4 +99,4 @@ for(let i = 0; i < 2; i++) {
 timmy.eat();
 timmy.exercise();
 }
-console.log(timmy);
+//console.log(timmy);
