@@ -1,3 +1,7 @@
+//======================
+//  The Characters
+//=======================
+
 class Hero {
     constructor(name, health, weapons, catchPhrases) {
         this.name = name;
@@ -14,8 +18,10 @@ class Hero {
     announceHealth() {
         console.log(this.health);
     }
-    fight() {
-        console.log('i\'m ready to rumble');
+    fight(enemy) {
+        let weapon = this.weapons.sugarShock;
+        enemy.health -= weapon;
+        console.log(`Pizza Rat got hit by ${Object.keys(this.weapons)[1]}! His health is now at ${enemy.health}!`)
     }
 
 }
@@ -27,20 +33,44 @@ class Enemy {
         this.name = name;
         this.health = 100;
         this.weapons = {
-            pepperoniStars: 5,
-            cheeseGrease: 10    
+           pepperoniStars: 5,
+           cheeseGrease: 10    
         };
         this.catchPhrases = ['i\'m youtube famous','i\'m more dangerous than an uncovered sewer'];
     }
-    talkSass() {
+    talkSmack() {
         console.log(this.catchPhrases[0]);
     }
     announceHealth() {
-        console.log(this.heatlh);
+        console.log(this.health);
     }
-    fight() {
-        console.log("i\'m gonna flatten you like a slice of pepperoni!");
+    fight(enemy) {
+        let weapon = this.weapons.cheeseGrease;
+        enemy.health -= weapon;
+        console.log(`Dougie got hit by ${Object.keys(this.weapons)[1]}! His health is now at ${enemy.health}!`)
     }
 }
 const pizzaRat = new Enemy('Pizza Rat');
-console.log(pizzaRat);
+//console.log(pizzaRat);
+
+//======================
+//  The Story
+//=======================
+
+//=========================
+// WALKING DOWN THE STREET
+//==========================
+
+
+dougie.talkSass();
+pizzaRat.talkSmack();
+dougie.announceHealth();
+pizzaRat.announceHealth();
+
+//======================
+//      FIGHT!
+//=======================
+pizzaRat.fight(dougie);
+dougie.fight(pizzaRat);
+dougie.announceHealth();
+pizzaRat.announceHealth();
