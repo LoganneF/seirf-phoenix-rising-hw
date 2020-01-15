@@ -49,7 +49,7 @@ let playerShip = {
       },
         checkWin: () => {
            if(enemiesArr.length === 0) {
-             alert("All aliens destroyed!")
+             alert("All aliens destroyed! You won!")
            } else if(playerShip <= 0) {
              alert("Your ship has been destroyed. Game over!")
            }
@@ -72,7 +72,7 @@ let playerShip = {
       //console.log(enemiesArr);
     
     //check if alive and aliens in array to fight
-    while(gameState.playerIsAlive() && alienEnemies.length >= 1) {
+    while(gameState.playerIsAlive() && enemiesArr.length >= 1) {
         let firstAlien = enemiesArr[0];
         for(i = 0; i < enemiesArr.length; i++){
             // Player ship attacks:
@@ -85,7 +85,7 @@ let playerShip = {
           enemiesArr.shift();
           console.log(enemiesArr.length + ' ships remaining');
           //ask user if they want to continue or retreat:
-          let response = prompt("Ship Destroyed, attack or retreat?");
+          let response = prompt("Alien ship destroyed, attack or retreat?");
 
             if (response === "retreat") {
               alert("You retreated, game over!");
