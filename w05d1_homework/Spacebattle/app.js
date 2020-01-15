@@ -13,7 +13,7 @@ let playerShip = {
       } else {
         console.log("Attack missed!");
       }
-      console.log(enemyShip);
+      //console.log(enemyShip);
        // if (Math.random() < alien[0].accuracy) {
       // console.log('You have been hit!');
     }
@@ -45,65 +45,66 @@ let playerShip = {
     let gameState = {
         playerIsAlive: () => {
         //return true if player is alive
-       if(playerShip.hull > 0){
-           return true;
-        }
+            return playerShip.hull >= 0
       },
         checkWin: () => {
-            return enemies.length === 0;
+           if(enemiesArr.length === 0) {
+             alert("All aliens destroyed!")
+           } else if(playerShip <= 0) {
+             alert("Your ship has been destroyed. Game over!")
+           }
         
         }
     };
 
-   
+      //================
       // Start the game
+      //=================
+
       console.log("Generating enemy ships");
-      enemy = new AlienShip();
-      console.log(enemy);
       
-      enemies = []
-      for(let i=0; i < 6; i++) {
-      enemies.push(new AlienShip());
+      const enemiesArr = []
+
+      for(let i = 0; i < 6; i++) {
+        enemiesArr.push(new AlienShip());
       }
 
-      console.log(enemies);
+      //console.log(enemiesArr);
     
-    while(gameState.playerIsAlive()) {
-        for(i = 0; i < enemies.length; i++){
+    //check if alive and aliens in array to fight
+    while(gameState.playerIsAlive() && alienEnemies.length >= 1) {
+        let firstAlien = enemiesArr[0];
+        for(i = 0; i < enemiesArr.length; i++){
             // Player ship attacks:
-          playerShip.attack(enemies[0]);
+          playerShip.attack(firstAlien);
 
-      // Turn by turn logic
+        // Turn by turn logic
         // Check if enemy ship is destroyed:
-        if (enemies.hull <= 0) {
-            //if enemy ship destroyed:
+        if (firstAlien.hull <= 0) {
           console.log("Enemy ship destroyed!");
-          enemies.shift();
-          console.log(enemies.length + ' ships remaining');
+          enemiesArr.shift();
+          console.log(enemiesArr.length + ' ships remaining');
           //ask user if they want to continue or retreat:
           let response = prompt("Ship Destroyed, attack or retreat?");
 
-          
-            if (response === "retreat" || enemies.length === 0) {
-              alert("You eliminated all the aliens, game over!");
+            if (response === "retreat") {
+              alert("You retreated, game over!");
               break;
                 } else if (response === "attack") {
                   //keep looping
                   console.log("Continuing gameplay");
+                  playerShip.attack(firstAlien);
                 }
                 } else {
                   // enemy ship not destroyed, their turn to attack:
                   // Enemy ship attacks:
-                  enemies[0].attack();
+                  firstAlien.attack(playerShip);
                 }
+                gameState.checkWin();
                 }
               }
       
-  // End game logic
-  //player lost or retreated
-  if (gameState.checkWin()) {
-    console.log("Game over");
-  }
+
   
   
   
