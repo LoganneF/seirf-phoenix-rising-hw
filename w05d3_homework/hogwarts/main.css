@@ -11,6 +11,10 @@ body {
     opacity: 0.5;
 }
 
+.cabbage {
+    color: chartreuse;
+}
+
 ul {
     list-style-type: none;
 }

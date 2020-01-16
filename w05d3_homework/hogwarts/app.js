@@ -99,6 +99,20 @@ $(() => {
 	$pet.hide();
 	$pet.show();
 
+	//==============
+	//	YEAR 6
+	//==============
+	$('.secret').hide('slow').delay(2000);
+	$('.secret').show('slow');
+
+	$leash.addClass('cabbage');
+	$leash.removeAttr('class','cabbage');
+
+	
+
+	//==============
+	//	YEAR 7
+	//==============
 
 
 
