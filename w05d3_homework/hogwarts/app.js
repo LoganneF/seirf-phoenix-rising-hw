@@ -89,9 +89,17 @@ $(() => {
 	$tr5.append($td9).append($td10);
 
 
+	//==============
+	//	YEAR 5
+	//==============
+
+	$wand.detach();
+	$butterBeer.remove();
+	$wand.text('Elder wand').insertAfter($pet).css('color', 'indigo');
+	$pet.hide();
+	$pet.show();
 
 
-	
 
 
 
