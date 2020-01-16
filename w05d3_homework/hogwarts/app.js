@@ -27,7 +27,7 @@ $(() => {
 	//==============
 	//	YEAR 3
 	//==============
-
+			// FIX THIS. CANT ALL HAVE .APPENDTO()
 	const $trunk = $('<ul>').attr('storage', 'trunk');
 	//li items
 	const $butterBeer = $('<li>').text('butter beer').appendTo($trunk);
@@ -102,17 +102,25 @@ $(() => {
 	//==============
 	//	YEAR 6
 	//==============
-	$('.secret').hide('slow').delay(2000);
-	$('.secret').show('slow');
+	//$('.secret').hide('slow').delay(2000);
+	//$('.secret').show('slow');
 
 	$leash.addClass('cabbage');
 	$leash.removeAttr('class','cabbage');
 
-	
+
 
 	//==============
 	//	YEAR 7
 	//==============
+	$semester.text('Fall 2018');
+
+	// FIX THIS. APPENDED TO END, NEEDS TO BE AT BEGINNING
+	const $moreButterBeer = $('<li>').text('Butter Beer').appendTo($trunk);
+	$trunk.attr('chest');
+
+	// ADD CSS TO THE PAGE THEN ADD PIC TO HOMEWORK FOLDER
+
 
 
 
