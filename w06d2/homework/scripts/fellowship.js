@@ -179,13 +179,15 @@ makeBuddies();
 // ============
 
 const leaveTheShire = () => {
+  console.log("leaving the Shire");
+  $( () => {
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
       // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
-
+      $('#The-Shire > ul').appendTo($('#Rivendell'));
   //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called (be sure to do it in the window.onload/document.ready function)
-
+});
 };
-
+leaveTheShire();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 6 complete - Left the Shire"
 
