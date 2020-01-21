@@ -236,7 +236,7 @@ const theBalrog = () => {
   // 1. change the 'Gandalf' text to 'Gandalf the White'
   // 2. add a class "the-white" to this element
   $('.buddy:first').text('Gandalf the White').addClass("the-white");
-  
+
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 });
 };
@@ -250,13 +250,15 @@ theBalrog();
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
-
+  //alert("The horn of gondor has been blown. Boromir's been killed by the Uruk-hai!");
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+$( () => {
+  $('.buddy:nth-child(5)').css("text-decoration", "line-through");
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+  $('.baddy:nth-child(3)').remove();
+});
 };
-
+hornOfGondor();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 10 complete - horn of gandor blew and Boromir is dead"
 
