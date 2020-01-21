@@ -202,7 +202,7 @@ const beautifulStranger = () => {
      $('.buddy:nth-child(4)').text('Aragorn');
   });
 };
-
+beautifulStranger();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
 
@@ -210,17 +210,20 @@ const beautifulStranger = () => {
 // Chapter 8
 // ============
 const forgeTheFellowShip = () => {
-
+console.log("forging the fellowship");
+$( () => {
   // 1. create a new div with an id 'the-fellowship'
-
+  const $theFellowship = $('<div>').attr('id', 'the-fellowship');
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  const $fellowShipH1 = $('<h1>').text('The Fellowship');
+    $theFellowship.append($fellowShipH1);
   // 3. append the fellowship to middle-earth
-
+    $('#middle-earth').append($theFellowship);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
-
+    $theFellowship.append('.hobbit', '.buddy');
+});
 };
-
+forgeTheFellowShip();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 8 complete - The Fellowship is created"
 
