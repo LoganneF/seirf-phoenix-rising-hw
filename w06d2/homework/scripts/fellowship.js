@@ -80,18 +80,20 @@ console.log("making hobbits");
     // hint: use the given 'hobbits' array and use a for loop
   // 3. also, give each hobbit (`li`) a class of "hobbit"
 
-    for(let i = 0; i < hobbits.lengths; i++) {
+    for(let i = 0; i < hobbits.length; i++) {
       const $hobbits = $('<li>').addClass('hobbit');
       const $hobbitsName = $('<h2>').text(hobbits[i]);
 
-      hobbits.append($hobbitsName);
+      $hobbits.append($hobbitsName);
       $hobbitList.append($hobbits);
     }
   
   // 4. append the ul to the shire
     // hint: get 'The-Shire' by using its id
-    $('#The-Shire').append($hobbitList)
+    $('#The-Shire').append($hobbitList);
+
   });
+
 };
 makeHobbits();
 // COMMIT YOUR WORK
@@ -101,12 +103,12 @@ makeHobbits();
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
-
+console.log("keeping it safe");
   // 1. create an empty div with an id of 'the-ring'
-
+    const $theRing = $('<div>').attr('id', 'the-ring');
   // 2. add the ring as a child of Frodo
     // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
-
+    $('.hobbit:first').append($theRing);
     // when you think you have given Frodo the ring, check in your Elements tab to see that it works correctly
 
 };
