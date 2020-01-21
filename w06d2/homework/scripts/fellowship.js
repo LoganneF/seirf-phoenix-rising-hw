@@ -104,6 +104,8 @@ makeHobbits();
 // ============
 const keepItSecretKeepItSafe = () => {
 console.log("keeping it safe");
+
+$( () => {
   // 1. create an empty div with an id of 'the-ring'
     const $theRing = $('<div>').attr('id', 'the-ring');
   // 2. add the ring as a child of Frodo
@@ -111,8 +113,9 @@ console.log("keeping it safe");
     $('.hobbit:first').append($theRing);
     // when you think you have given Frodo the ring, check in your Elements tab to see that it works correctly
 
+  });
 };
-
+keepItSecretKeepItSafe();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 3 complete - Made the ring and gave it to Frodo".
 
@@ -120,15 +123,26 @@ console.log("keeping it safe");
 // Chapter 4
 // ============
 const makeBaddies = () => {
+console.log("making baddies");
 
+$( () => {
   // 1. display an unordered list of baddies in Mordor
-
   // 2. give each of the baddies a class of "baddy"
-
   // 3. remember to append the ul to Mordor
+  const $baddiesList = $('<ul>');
 
+  for(let i = 0; i < baddies.length; i++){
+    const $baddies = $('<li>').addClass('baddy');
+    const $baddiesName = $('<h2>').text(baddies[i]);
+
+    $baddies.append($baddiesName);
+    $baddiesList.append($baddies);
+  }
+
+  $('#Mordor').append($baddiesList);
+});
 };
-
+makeBaddies();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
 
