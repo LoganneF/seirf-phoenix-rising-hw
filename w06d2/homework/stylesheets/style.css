@@ -104,11 +104,16 @@ ul {
   display: inline-block;
   margin: auto;
 }
+/*3. make elements of the class "the-white" have a white background and a grey border */
 
+.the-white {
+  background-color: white;
+  border: 1px solid gray;
+}
 
-/*aside {
+/* aside {
   display: inline-block;
-}*/
+} */
 
 
 
