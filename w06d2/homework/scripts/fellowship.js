@@ -195,10 +195,12 @@ leaveTheShire();
 // Chapter 7
 // ============
 const beautifulStranger = () => {
-
+  console.log("changing Strider to Aragorn");
+  $( () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
      // hint: You can get a list of elements by tag name, such as 'aside'
-
+     $('.buddy:nth-child(4)').text('Aragorn');
+  });
 };
 
 // COMMIT YOUR WORK
