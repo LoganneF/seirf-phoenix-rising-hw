@@ -266,13 +266,18 @@ hornOfGondor();
 // Chapter 11
 // ============
 const itsDangerousToGoAlone = () => {
+console.log("too dangerous to go alone")
 
+$( () => {
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-
+  $('.hobbit:first').appendTo($('#Mordor'))
+    $("li:contains('Sam')").appendTo($('#Mordor'));
   // 2. add a div with an id of 'mount-doom' to Mordor
-
+  const $mountDoom = $('<div>').attr('id', 'mount-doom');
+  $('#Mordor').append($mountDoom);
+});
 };
-
+itsDangerousToGoAlone();
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 11 complete - Sam and Frodo are in Mordor and Mount Doom has been created"
 
