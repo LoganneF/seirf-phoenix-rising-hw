@@ -1,0 +1,33 @@
+#gameboard {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.square {
+    width: 119px;
+    height: 119px;
+}
+
+.bottom {
+    border-bottom: 1px solid black;
+}
+
+.right {
+    border-right: 1px solid black;
+}
+
+.x {
+    background-color:aqua;
+}
+
+.o {
+    background-color: plum;
+}
