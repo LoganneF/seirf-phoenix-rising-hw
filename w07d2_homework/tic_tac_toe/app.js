@@ -9,14 +9,14 @@ $( () => {
             alert('This square has already been selected. Please select another.');
         } else {
             if(player === 1) {
-                selectedSquare.addClass('x');
+                selectedSquare.addClass('x').text('X');
                 if(checkWin('x')) {
                     alert('Congrats! Player ' + player + ' has won!');
                 } else {
                     player = 2;
                 }
             } else {
-                selectedSquare.addClass('o');
+                selectedSquare.addClass('o').text('O');
                 if(checkWin('o')) {
                     alert('Congrats! Player ' + player + ' has won!');
                 } else {
