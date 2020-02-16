@@ -8,13 +8,13 @@ class Hamster {
         this.name = name;
         this.price = 15;
     }
-    wheelRun () {
+    wheelRun() {
     console.log("squeak squeak");
     }   
-    eatFood () {
+    eatFood() {
         console.log("nibble nibble");
     }
-    getPrice () {
+    getPrice() {
         console.log(this.price);
     }
 }

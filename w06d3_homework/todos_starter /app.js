@@ -30,10 +30,18 @@ const createToDoItem = () => {
     $('#to-do-list').append(toDoItemsArr)
     //prevent page from refreshing
     event.preventDefault();
+
+
+
+
+//need a completed button appended to the $newToDoItem div
+$completeButton = $('<button>').text('COMPLETED')
+$newToDoItem.append($completeButton);
 }
 
 //user clicking submit button activates function 
 $('#submit').on('click', createToDoItem)
-
-
+//when user clicks that button, it moves to "been done" column
+//change color and adds 'remove' button when moves to that column
+//when user clicks 'remove' item is removed from page 
 });

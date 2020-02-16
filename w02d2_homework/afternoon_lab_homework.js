@@ -67,3 +67,27 @@ if(numEntered <5 ) {
   9. thomsCloset[1][2] = "Footie Pajamas";
   console.log(thomsCloset);
   */
+
+
+  .img_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+ }
+ 
+ .img_card {
+    flex: 0 3 32%;
+    border-style: solid;
+    border-color: rgb(184, 184, 184);
+    border-width: 1px;
+    border-radius: 7px;
+    margin-top: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;

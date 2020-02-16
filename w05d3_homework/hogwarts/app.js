@@ -3,10 +3,10 @@ $(() => {
 	//	YEAR 1
 	//==============
 	const $container = $('#container');
-	console.log($container);
+	//console.log($container);
 
 	const $h1 = $('<h1>').text('Hogwarts');
-	console.log($h1);
+	//console.log($h1);
 
 	$container.append($h1);
 
@@ -19,24 +19,21 @@ $(() => {
 	const $pet = $('<h4>').addClass('cat').text('Twitch');
 	const $wand = $('<h4>').text('Elder Wand');
 
-	$container.append($name);
-	$container.append($house);
-	$container.append($pet);
-	$container.append($wand);
+	$container.append($name, $house, $pet, $wand);
 
 	//==============
 	//	YEAR 3
 	//==============
-			// FIX THIS. CANT ALL HAVE .APPENDTO()
+			
 	const $trunk = $('<ul>').attr('storage', 'trunk');
 	//li items
-	const $butterBeer = $('<li>').text('butter beer').appendTo($trunk);
-	const $cloak = $('<li>').text('invisibility cloak').addClass('secret').appendTo($trunk);
-	const $map = $('<li>').text('magic map').addClass('secret').appendTo($trunk);
-	const $timeTurner = $('<li>').text('time turner').addClass('secret').appendTo($trunk);
-	const $leash = $('<li>').text('leash').addClass('cat').appendTo($trunk);
-	const $candy = $('<li>').text('Bertie Botts Every Flavored Beans').appendTo($trunk);
+	const $butterBeer = $('<li>').text('butter beer');
+	const $cloak = $('<li>').text('invisibility cloak').addClass('secret');
+	const $timeTurner = $('<li>').text('time turner').addClass('secret');
+	const $leash = $('<li>').text('leash').addClass('cat');
+	const $candy = $('<li>').text('Bertie Botts Every Flavored Beans');
 	
+	$trunk.append($butterBeer, $cloak, $timeTurner, $leash, $candy);
 	$container.append($trunk);
 
 	//==============
@@ -70,23 +67,23 @@ $(() => {
 	const $td10 = $('<td>').text('Quidditch practice, Herbology, Divination');
 
 	//create the table 
-	$container.append($semester).append($schedule);
-	$schedule.append($thead).append($day).append($classes).append($tr).append($tr2).append($tr3).append($tr4).append($tr5);
+	$container.append($semester, $schedule);
+	$schedule.append($thead, $day, $classes, $tr, $tr2, $tr3, $tr4, $tr5);
 	
 	//create monday row
-	$tr.append($td1).append($td2);
+	$tr.append($td1, $td2);
 
 	//create tuesday row
-	$tr2.append($td3).append($td4);
+	$tr2.append($td3, $td4);
 
 	//create wednesday row
-	$tr3.append($td5).append($td6);
+	$tr3.append($td5, $td6);
 
 	//create thursday row
-	$tr4.append($td7).append($td8);
+	$tr4.append($td7, $td8);
 
 	//create friday row
-	$tr5.append($td9).append($td10);
+	$tr5.append($td9, $td10);
 
 
 	//==============
@@ -102,8 +99,8 @@ $(() => {
 	//==============
 	//	YEAR 6
 	//==============
-	//$('.secret').hide('slow').delay(2000);
-	//$('.secret').show('slow');
+	$('.secret').hide('slow').delay(2000);
+	$('.secret').show('slow');
 
 	$leash.addClass('cabbage');
 	$leash.removeAttr('class','cabbage');
@@ -115,9 +112,8 @@ $(() => {
 	//==============
 	$semester.text('Fall 2018');
 
-	// FIX THIS. APPENDED TO END, NEEDS TO BE AT BEGINNING
-	const $moreButterBeer = $('<li>').text('Butter Beer').appendTo($trunk);
-	$trunk.attr('chest');
+	const $moreButterBeer = $('<li>').text('Butter Beer').prependTo($trunk);
+	$trunk.attr('storage', 'chest');
 
 	// ADD CSS TO THE PAGE THEN ADD PIC TO HOMEWORK FOLDER
 
