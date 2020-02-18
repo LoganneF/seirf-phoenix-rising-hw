@@ -16,6 +16,10 @@ app.get('/budget', (req, res)=>{
     //res.send(budget);
     res.render('index.ejs', {budget: budget})
 });
+//new route
+app.get('/budget/new', (res, req)=> {
+    res.render('new.ejs');
+});
 
 //show route
 app.get('/budget/:id', (req, res)=>{

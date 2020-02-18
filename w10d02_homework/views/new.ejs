@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" href="/css/app.css">   
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>New Budget Item Page</h1>
+    <form action='/budget' method="POST">
+        Date <input type="text" name="date" placeholder="Date"/><br/>
+        Name <input type="text" name="name" placeholder="Name"/><br/>
+        Amount <input type="text" name="amount" placeholder="Amount"/><br/>
+        From <input type="text" name="from" placeholder="From"/><br/>
+        Tags <input type="text" name="tags" placeholder="Tags"/><br/>
+        <input type="Submit" name="name" value="Create Budget Item"/><br/>
+
+
+    </form>
 </body>
 </html>
