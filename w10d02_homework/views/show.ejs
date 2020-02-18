@@ -13,6 +13,28 @@
     <div class="container">
         <h1><%= budget.name %></h1>
         <button><a href="/budget">Back</a></button>
+        <table>
+            <tr>
+                <td>Date</td>
+                <td><%= budget.date %></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><%= budget.name %></td>
+            </tr>
+            <tr>
+                <td>From</td>
+                <td><%= budget.from %></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td><%= budget.amount %></td>
+            </tr>
+            <tr>
+                <td>Tags</td>
+                <td><%= budget.tags %></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
