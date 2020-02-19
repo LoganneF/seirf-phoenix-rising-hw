@@ -12,12 +12,12 @@
 <body>
     <div id="account">
         <h2>Bank Account</h2>
-        <h3>Current Available Balance: <%= bankAccount %></h3> 
-        <% bankAccount = 0; %>
+        
+        <% let bankAccount = 0; %>
         <% for(let i = 0; i < budget.length; i++){ %>
-        <%    bankAccount += Number(budget[i].amount); %> 
+        <%    bankAccount += Number(budget[i].amount) %> 
         <%}%>  
-      
+        <h3>Current Available Balance: <%= bankAccount %></h3> 
     </div>
 
     <div class="container">
