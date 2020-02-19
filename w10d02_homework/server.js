@@ -1,7 +1,16 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const budget = require('./models/budget.js')
+const budget = require('./models/budget.js');
+
+//tell express to use the middleware
+app.use(express.urlencoded({extended:false}));
+
+// middleware
+app.use((req, res, next)=>{
+    console.log('I run for all routes');
+    next();
+});
 
 //configure express.static
 app.use(express.static('public'));
@@ -17,10 +26,18 @@ app.get('/budget', (req, res)=>{
     res.render('index.ejs', {budget: budget})
 });
 //new route
-app.get('/budget/new', (res, req)=> {
+app.get('/budget/new', (req, res)=> {
     res.render('new.ejs');
 });
 
+//post route
+app.post('/budget', (req, res)=>{
+    //console.log(req.body);
+    budget.push(req.body);
+    console.log('data received');
+    res.redirect('/budget');
+
+});
 //show route
 app.get('/budget/:id', (req, res)=>{
     const currentItem = budget[req.params.id]
