@@ -23,7 +23,10 @@ app.get('/', (req, res) => {
 //index route
 app.get('/budget', (req, res)=>{
     //res.send(budget);
-    res.render('index.ejs', {budget: budget})
+    res.render('index.ejs', {
+        budget: budget,
+        bankAccount: 0,
+    })
 });
 //new route
 app.get('/budget/new', (req, res)=> {

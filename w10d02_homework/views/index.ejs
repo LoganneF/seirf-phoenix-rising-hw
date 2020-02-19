@@ -10,6 +10,16 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="account">
+        <h2>Bank Account</h2>
+        <h3>Current Available Balance: <%= bankAccount %></h3> 
+        <% bankAccount = 0; %>
+        <% for(let i = 0; i < budget.length; i++){ %>
+        <%    bankAccount += Number(budget[i].amount); %> 
+        <%}%>  
+      
+    </div>
+
     <div class="container">
     <h1>Budgtr ALL</h1>
         <table>
