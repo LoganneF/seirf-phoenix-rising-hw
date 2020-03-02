@@ -19,6 +19,9 @@ const Product = require('./models/products');
 ////////////////////
 ///  ROUTES     ////
 ////////////////////
+app.get('/',(req,res)=>{
+  res.redirect('/products')
+})
 
 //index route
 app.get("/products", (req, res) => {
