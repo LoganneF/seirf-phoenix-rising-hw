@@ -20,10 +20,16 @@ const Product = require('./models/products');
 ///  ROUTES     ////
 ////////////////////
 
+//index route
 app.get("/products", (req, res) => {
   // Product.find({}, (error, products) => {
     res.render("index.ejs");
   // });
+});
+
+//show route
+app.get('/products/:id', (req, res)=>{
+  res.render('show.ejs')
 });
 
   // Web server:
