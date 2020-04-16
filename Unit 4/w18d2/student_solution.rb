@@ -38,9 +38,26 @@
 # puts nums.select {|i| i % 5 == 0}
 
 # COLOR ARRAY
-colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+# colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
 # puts colors.sample
 # puts colors.reverse
 # colors.each { |i| puts i.upcase}
 
+#METHODS
+
+# def find_area height, width
+#     height * width
+# end
+
+# puts find_area(2, 4)
+
+# nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0]
+
+# def multiply_each_by_five arr
+#     arr.each { |i| 
+#     print i * 5
+#     }
+# end
+
+# multiply_each_by_five(nums)
