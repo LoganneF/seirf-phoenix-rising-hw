@@ -12,7 +12,7 @@
 
 # Nums Array and Enumerables
 
-nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0, 35, 19, 66, 3, 22, 21, 4, 4, 4, 0, 1, 2, 3, 4, 12, 15]
+# nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0, 35, 19, 66, 3, 22, 21, 4, 4, 4, 0, 1, 2, 3, 4, 12, 15]
 
 # print nums.uniq
 # print nums.push(77)
@@ -35,4 +35,12 @@ nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0, 35, 19, 66, 3, 22, 21, 4, 4, 4
 # puts nums.group_by {|i| i % 3}
 # puts nums.minmax 
 # puts nums.reject {|i| i % 3 != 0}
-puts nums.select {|i| i % 5 == 0}
+# puts nums.select {|i| i % 5 == 0}
+
+# COLOR ARRAY
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+# puts colors.sample
+# puts colors.reverse
+# colors.each { |i| puts i.upcase}
+
