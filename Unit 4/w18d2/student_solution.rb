@@ -61,3 +61,51 @@
 # end
 
 # multiply_each_by_five(nums)
+
+# METHODS WITH A HASH
+
+book = {
+  title: 'The Great Gatsby',
+  author: 'F Scott Fitzgerald',
+  year: 1925,
+  price: 10
+}
+
+lamp = {
+  type: 'reading',
+  brand: 'Ikea',
+  price: 25
+}
+
+table = {
+  type: 'bed side',
+  brand: 'Crate & Barrel',
+  color: 'birch',
+  price: 50
+}
+
+# def print_price 
+#    print hash.each_key("price")
+# end
+
+# print_price
+
+# def print_item_sums first, second
+
+# end
+
+# EULER PROBLEM 1
+
+# loop through number 1 - 1000
+# if multiple of 3 or 5, add to empty variable 
+
+
+sum = 0
+
+1000.times do |i|    
+    if i % 3 == 0 || i % 5  == 0
+        sum += i
+    end
+end 
+
+puts sum
