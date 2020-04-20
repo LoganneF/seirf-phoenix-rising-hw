@@ -64,48 +64,63 @@
 
 # METHODS WITH A HASH
 
-book = {
-  title: 'The Great Gatsby',
-  author: 'F Scott Fitzgerald',
-  year: 1925,
-  price: 10
-}
+# book = {
+#   title: 'The Great Gatsby',
+#   author: 'F Scott Fitzgerald',
+#   year: 1925,
+#   price: 10
+# }
 
-lamp = {
-  type: 'reading',
-  brand: 'Ikea',
-  price: 25
-}
+# lamp = {
+#   type: 'reading',
+#   brand: 'Ikea',
+#   price: 25
+# }
 
-table = {
-  type: 'bed side',
-  brand: 'Crate & Barrel',
-  color: 'birch',
-  price: 50
-}
+# table = {
+#   type: 'bed side',
+#   brand: 'Crate & Barrel',
+#   color: 'birch',
+#   price: 50
+# }
 
-# def print_price 
-#    print hash.each_key("price")
+# def print_price hash
+#    hash[:price]
 # end
 
-# print_price
+# puts print_price book
 
 # def print_item_sums first, second
-
+#   first[:price] + second[:price]
 # end
+
+# puts print_item_sums lamp, table
 
 # EULER PROBLEM 1
 
 # loop through number 1 - 1000
-# if multiple of 3 or 5, add to empty variable 
+# # if multiple of 3 or 5, add to empty variable 
 
 
-sum = 0
+# sum = 0
 
-1000.times do |i|    
-    if i % 3 == 0 || i % 5  == 0
-        sum += i
+# 1000.times do |i|    
+#     if i % 3 == 0 || i % 5  == 0
+#         sum += i
+#     end
+# end 
+
+# puts sum
+
+# PRIMES
+require 'prime'
+def check_prime? number
+    if number == Prime
+        puts number
     end
-end 
+end
 
-puts sum
+puts check_prime?(6)
+# def get_primes primes
+
+# end
