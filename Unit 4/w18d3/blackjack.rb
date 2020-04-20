@@ -10,6 +10,8 @@ end
 
 class The_House
     def initialize name
-    def name
-        @name
+        def name
+            @name
+        end
     end
+end
