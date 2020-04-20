@@ -112,15 +112,10 @@
 
 # puts sum
 
-# PRIMES
-require 'prime'
-def check_prime? number
-    if number == Prime
-        puts number
-    end
-end
-
-puts check_prime?(6)
-# def get_primes primes
-
+# # PRIMES
+# require 'prime'
+# def check_prime? number
+#     Prime.prime?(number)
 # end
+
+# puts check_prime?(6)
