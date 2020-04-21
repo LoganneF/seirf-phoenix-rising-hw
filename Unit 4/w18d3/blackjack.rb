@@ -18,12 +18,6 @@ end
 human = Player.new "Human", [], 100
 computer = Player.new "Computer", [], 1000
 
-###########
-# The Deck #
-###########
-
-#Create an empty array that will hold your card objects. This can just be an array, it does not need to be a class.
- CardDeck = []
 
 ###########
 # CARDS   #
@@ -31,11 +25,45 @@ computer = Player.new "Computer", [], 1000
 
 class Card
     attr_accessor :face, :value, :suit
-    Suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
-    Values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-    def initialize suit, face
+   
+    def initialize face, value, suit
+        @face = face
         @suit = suit
         @value = value
     end
+end
+
+###########
+# The Deck #
+###########
+
+#create deck of 52 cards
+#create an array of face values, suits and an empty array for cards
+class Deck
+    def initialize
+        @faces = ["clubs", "spades", "hearts", "diamonds"]
+        @suits = [*(2..10), "jack", "queen", "king", "ace"]
+        @cards = []
+    end
+
+    #loop through each face
+    #then loop through each suit for that face
+    #to generate 1 of every combo
+    @faces.each do |face|
+        #if face is number make value = face
+        if face.class == Integer
+            value = face
+        elsif face == 'Ace'
+            value = 11
+        #everything else has value of 10
+        else 
+            value = 10
+        end
+        @suits.each do |suit|
+            @cards << Card.new(face, suit, value)
+        end
+    end
+
+#shuffle the cards
+@cards.shuffle!
 end
