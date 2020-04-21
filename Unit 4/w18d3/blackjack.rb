@@ -66,4 +66,19 @@ class Deck
 
 #shuffle the cards
 @cards.shuffle!
+
+    #create function w/i deck class to deal correct number of cards
+    def deal (num, player)
+        num.times {@cards.shift.generate_card(player)}
+    end
+end
+
+################################
+# Generating cards for players #
+################################
+#take parameter 'player' and add to that players hand
+
+def generate_card (player)
+    new_card = Card.new face, suit, value
+    player.hand << new_card
 end
