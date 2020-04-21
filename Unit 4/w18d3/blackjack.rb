@@ -3,16 +3,20 @@
 ###########
 
 class Player 
-    def initialize name
+    attr_accessor :name, :hand, :bankroll
+
+    def initialize name, hand, bankroll
         @name = name
         @bankroll = 100
         @hand = []
     end
 
-    def name
-        @name
-    end
 end
+
+#CREATING PLAYERS
+
+human = Player.new "Human", [], 100
+computer = Player.new "Computer", [], 1000
 
 ###########
 # The Deck #
@@ -25,4 +29,13 @@ end
 # CARDS   #
 ###########
 
+class Card
+    attr_accessor :face, :value, :suit
+    Suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    Values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
+    def initialize suit, face
+        @suit = suit
+        @value = value
+    end
+end
