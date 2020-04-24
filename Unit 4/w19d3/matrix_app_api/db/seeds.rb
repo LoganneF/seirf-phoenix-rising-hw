@@ -11,3 +11,7 @@ Character.create([
 	{ name: "Morpheus", description: "Trinity is a computer programmer and a hacker who has escaped from the Matrix" },
 	{ name: "Agent Smith", description: "Smith began as an Agent, an AI program in the Matrix programmed to keep order within the system" },
 ])
+
+Vehicle.create([
+    { name: "Nebuchadnezzar", style: "Spaceship"}
+])
