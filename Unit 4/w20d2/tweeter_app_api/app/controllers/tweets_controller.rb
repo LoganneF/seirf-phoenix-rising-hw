@@ -24,10 +24,10 @@ class TweetsController < ApplicationController
         render(json: {tweet: tweet})
     end
 
-    # def destroy
-    #     tweet = Tweet.destroy(params[:id])
-    #     render(status: 204)
-    # end
+    def destroy
+        tweet = Tweet.destroy(params[:id])
+        render(status: 204)
+    end
 
     private
 
