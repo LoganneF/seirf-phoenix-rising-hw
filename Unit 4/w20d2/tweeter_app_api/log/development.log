@@ -31,3 +31,35 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 45ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 2643)
 
 
+Started GET "/tweets" for ::1 at 2020-04-25 19:18:37 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (1.9ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:3:in `index'
+Completed 200 OK in 35ms (Views: 14.4ms | ActiveRecord: 16.8ms | Allocations: 4592)
+
+
+Started POST "/tweets" for ::1 at 2020-04-25 19:18:44 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Crentist", "author"=>"Dwight", "content"=>"My dentist's name is Crentist, maybe that's why he became a dentist"}}
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.0ms | Allocations: 70745)
+
+
+  
+NameError (undefined local variable or method `tweet_params' for #<TweetsController:0x00007fa1b295a4b0>
+Did you mean?  tweet_path):
+  
+app/controllers/tweets_controller.rb:12:in `create'
+Started POST "/tweets" for ::1 at 2020-04-25 19:19:38 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Crentist", "author"=>"Dwight", "content"=>"My dentist's name is Crentist, maybe that's why he became a dentist"}}
+[31mUnpermitted parameter: :author[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:14:in `create'
+  [1m[36mTweet Create (1.1ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content") VALUES ($1, $2) RETURNING "id"[0m  [["title", "Crentist"], ["content", "My dentist's name is Crentist, maybe that's why he became a dentist"]]
+  ↳ app/controllers/tweets_controller.rb:14:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:14:in `create'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 15.2ms | Allocations: 5627)
+
+
